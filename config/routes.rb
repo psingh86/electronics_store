@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sign_up/index'
   get 'login/index'
   get 'new_item/index' => 'new_item/index', :as => 'new_item'
   get 'sale_item/index' => 'sale_item/index', :as => 'sale_item'
