@@ -1,3 +1,4 @@
 class User < ApplicationRecord
-    has_one :Province
+    belongs_to :Province
+    validates :first_name, :last_name, :password, :address, presence: true
 end
