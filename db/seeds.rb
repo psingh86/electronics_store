@@ -56,26 +56,34 @@ Faker::UniqueGenerator.clear
 # Province.create(name:"Nunavut",GST:0.0,PST:0.05,HST:0.0)
 
 
-BC = Province.find_by(name: "British Columbia")
+# BC = Province.find_by(name: "British Columbia")
 
 
 
-def swapi_fetch(url)
-    JSON.parse(URI.open(url).read)
-  end
+# def swapi_fetch(url)
+#     JSON.parse(URI.open(url).read)
+#   end
 
-def person_url()
-    "https://randomuser.me/api/"
-end
+# def person_url()
+#     "https://randomuser.me/api/"
+# end
     
-nums = 0..3
-nums.each do |num|
-    person = swapi_fetch(person_url())
-     User.create(first_name: person['results'][0]['name']['first'],
-                    last_name: person['results'][0]['name']['last'],
-                    password: "pass",
-                    address: person['results'][0]['location']['street']['name'],
-                    Province_id: BC.id)
-    # puts person['results'][0]['name']['first']
-    # puts person['results'][0]['location']['street']['name']
-end
+# nums = 0..3
+# nums.each do |num|
+#     person = swapi_fetch(person_url())
+#      User.create(first_name: person['results'][0]['name']['first'],
+#                     last_name: person['results'][0]['name']['last'],
+#                     password: "pass",
+#                     address: person['results'][0]['location']['street']['name'],
+#                     Province_id: BC.id)
+   
+# end
+
+  computer = Category.find_by(name: "Computer")
+
+query = URI.encode_www_form_component(computer.name)
+
+downloaded_image = URI.open("https://source.unsplash.com/600x600/?#{query}")
+
+computer.image.attach(io: downloaded_image, filename: "m-#{computer.name}.jpg")
+
