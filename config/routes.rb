@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'new_item/index'
-  get 'sale_item/index'
+  get 'new_item/index' => 'new_item/index', :as => 'new_item'
+  get 'sale_item/index' => 'sale_item/index', :as => 'sale_item'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   get 'product_search/index'=> 'product_search/index', :as => 'search_page'

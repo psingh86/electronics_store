@@ -3,7 +3,7 @@
 
 <div class = "is-size-6">
 <% @resultSet.each do |result|%>
-    <%= result.name%><br>
+    <%= link_to result.name, result%><br>
     <br>
 <% end %>
 </div>

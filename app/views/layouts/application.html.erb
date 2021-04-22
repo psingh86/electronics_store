@@ -43,6 +43,17 @@
           <%= button_tag "Check Out", :class => 'button is-info',:name => nil%>
         </div>
     <% end %>
+    <br>
+    <p>
+      <%= form_tag(sale_item_path, :method => "get",
+          class: 'navbar-form navbar-left') do %>
+          <%= button_tag "Items On Sale", :class => 'button is-info',:name => nil%>
+      <% end %> 
+      <%= form_tag(new_item_path, :method => "get",
+          class: 'navbar-form navbar-left') do %>
+          <%= button_tag "Items just added", :class => 'button is-info',:name => nil%>
+      <% end %> 
+    </p>
     </div>
   </nav>
     <%= yield %>

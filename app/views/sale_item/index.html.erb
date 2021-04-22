@@ -1,2 +1,9 @@
-<h1>SaleItem#index</h1>
-<p>Find me in app/views/sale_item/index.html.erb</p>
+
+<h1 class="title is-4">Products on sale</h1>
+
+<div class = "is-size-6">
+<% @resultSet.each do |result|%>
+    <%= link_to result.name, result%><br>
+    <br>
+<% end %>
+</div>
