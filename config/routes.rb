@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'product_search/index'
   resources :provinces
   resources :users
   resources :orders
