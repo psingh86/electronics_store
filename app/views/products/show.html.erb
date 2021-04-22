@@ -16,24 +16,31 @@
 </p>
 
 <p>
-  <strong>Source:</strong>
-  <%= @product.source %>
+  <strong>See more details:</strong>
+  <a href=<%=@product.source %>>link to other website</a> 
 </p>
 
 <p>
   <strong>Price:</strong>
-  <%= @product.price %>
+  $<%= @product.price %>
 </p>
 
 <p>
-  <strong>Issale:</strong>
+  <strong>On Sale:</strong>
   <%= @product.isSale %>
 </p>
 
 <p>
   <strong>Image:</strong>
-  <%= @product.image %>
+  <p>
+    <img src=<%= @product.image %> alt="" heiht ="250" width = 250 />
+  </p>
 </p>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
+<p>
+  <strong>Category:</strong>
+  <%= link_to Category.find_by(id: @product.Category_id).name, Category.find_by(id: @product.Category_id) %>
+</p>
+
+<%# <%= link_to 'Edit', edit_product_path(@product) %> 
 <%= link_to 'Back', products_path %>
