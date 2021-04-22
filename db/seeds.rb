@@ -79,11 +79,11 @@ Faker::UniqueGenerator.clear
    
 # end
 
-  computer = Category.find_by(name: "Computer")
+#   computer = Category.find_by(name: "Computer")
 
-query = URI.encode_www_form_component(computer.name)
+# query = URI.encode_www_form_component(computer.name)
 
-downloaded_image = URI.open("https://source.unsplash.com/600x600/?#{query}")
+# downloaded_image = URI.open("https://source.unsplash.com/600x600/?#{query}")
 
-computer.image.attach(io: downloaded_image, filename: "m-#{computer.name}.jpg")
+# computer.image.attach(io: downloaded_image, filename: "m-#{computer.name}.jpg")
 

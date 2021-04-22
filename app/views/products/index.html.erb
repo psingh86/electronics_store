@@ -24,7 +24,7 @@
       <tr>
         <td><%= product.brand %></td>
         <td><a href=<%=product.source %>>link to other website</a></td>
-        <td>$<%= product.price %></td>
+        <td><%= number_to_currency(product.price) %></td>
         <td><input type="text" id="qty" name="qty" placeholder="Enter Quantity"></td>
         <td><button type="Button">Add to cart</button></td>
       </tr>
