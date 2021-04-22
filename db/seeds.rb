@@ -87,3 +87,4 @@ Faker::UniqueGenerator.clear
 
 # computer.image.attach(io: downloaded_image, filename: "m-#{computer.name}.jpg")
 
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

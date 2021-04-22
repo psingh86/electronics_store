@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'product_search/index'=> 'product_search/index', :as => 'search_page'
   resources :provinces
   resources :users
