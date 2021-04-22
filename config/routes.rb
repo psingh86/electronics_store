@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'product_search/index'
+  get 'product_search/index'=> 'product_search/index', :as => 'search_page'
   resources :provinces
   resources :users
   resources :orders
   resources :categories
   resources :products
+
+  root to: "products#index"
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

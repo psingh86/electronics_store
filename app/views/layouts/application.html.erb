@@ -31,7 +31,17 @@
         <div class="input-group-btn">
           <%= button_tag "Search", :class => 'button is-info',:name => nil%>
         </div>
+        <div>
+        <div>
       </div>
+    <% end %>
+    <br>
+    <%# changepath %>
+    <%= form_tag(search_page_path, :method => "get",
+        class: 'navbar-form navbar-right') do %>
+        <div class="input-group-btn">
+          <%= button_tag "Check Out", :class => 'button is-info',:name => nil%>
+        </div>
     <% end %>
     </div>
   </nav>
