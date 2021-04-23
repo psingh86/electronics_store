@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  get 'sign_up/index'
-  get 'login/index'
+  get 'sign_up/index'=> 'sign_up/index', :as => 'sign_up'
+  get 'login/index'=> 'login/index', :as => 'login'
   get 'new_item/index' => 'new_item/index', :as => 'new_item'
   get 'sale_item/index' => 'sale_item/index', :as => 'sale_item'
   devise_for :admin_users, ActiveAdmin::Devise.config

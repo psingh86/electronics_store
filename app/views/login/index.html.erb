@@ -1,2 +1,22 @@
-<h1>Login#index</h1>
-<p>Find me in app/views/login/index.html.erb</p>
+ <%= form_tag(root_path, :method => "get",
+    class: 'navbar-form navbar-right') do %>
+
+    <p class = "subtitle is-4">Log In</p>
+    <div>
+        <%= label_tag 'first_name'%>
+        <%= text_field_tag 'name'%>
+    </div>
+
+    <div>
+        <%= label_tag 'password'%> 
+        <%= password_field_tag :password,  params[:password]%>
+    </div>
+<br>
+      <%= button_tag 'Login',:name => nil%>
+
+<% end %> 
+<br>
+ <%= form_tag(sign_up_path, :method => "get",
+    class: 'navbar-form navbar-right') do %>
+    <%= button_tag 'SignUp',onclick: sign_up_path%>
+<% end %> 
