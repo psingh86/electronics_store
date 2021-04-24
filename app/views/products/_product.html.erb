@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @product.brand %>
+</p>
+
+<p>
+  <strong>Manufacturer:</strong>
+  <%= @product.manufacturer %>
+</p>
+
+<p>
+  <strong>See more details:</strong>
+  <a href=<%=@product.source %>>link to other website</a> 
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= number_to_currency(@product.price) %>
+</p>
+
+<p>
+  <strong>On Sale:</strong>
+  <%= @product.isSale %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <p>
+    <img src=<%= @product.image %> alt="" heiht ="250" width = 250 />
+  </p>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= link_to Category.find_by(id: @product.Category_id).name, Category.find_by(id: @product.Category_id) %>
+</p>
+
+<%# <%= link_to 'Edit', edit_product_path(@product) %> 
+<%= link_to 'Back', products_path %>
