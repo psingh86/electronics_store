@@ -1,2 +1,34 @@
-<h1>SignUp#index</h1>
-<p>Find me in app/views/sign_up/index.html.erb</p>
+<h1>SignUp</h1>
+ <%= form_tag(login_path, :method => "get",
+    class: 'navbar-form navbar-right') do %>
+
+    <p class = "subtitle is-4">Log In</p>
+    <div>
+        <%= label_tag 'first_name'%>
+        <%= text_field_tag 'first_name'%>
+    </div>
+
+    <div>
+        <%= label_tag 'last_name'%>
+        <%= text_field_tag 'last_name'%>
+    </div>
+
+      <div>
+        <%= label_tag 'password'%> 
+        <%= password_field_tag :password,  params[:password]%>
+    </div>
+
+    <div>
+        <%= label_tag 'address'%>
+        <%= text_field_tag 'address'%>
+    </div>
+    <div>
+        <%= label_tag 'Province'%>
+        <%= select_tag 'province', options_from_collection_for_select(Province.all, :id,:name),  class: "select is-info" %>
+    </div>
+
+
+<br>
+      <%= button_tag 'Sign_up',:name => nil%>
+
+<% end %>

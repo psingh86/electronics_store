@@ -4,6 +4,25 @@ class ProductsController < ApplicationController
   # GET /products or /products.json
   def index
     @products = Product.all
+    session[:signup] = 1
+    if session[:login] == 0
+      if params[:password].blank? && params[:name].blank?
+        redirect_to(login_path, alert: 'Empty field!') and return
+      elsif params[:password].blank? && !params[:name].blank?
+        redirect_to(login_path, alert: 'Empty field!') and return
+      elsif !params[:password].blank? && params[:name].blank?
+        redirect_to(login_path, alert: 'Empty field!') and return
+      else
+        user = User.find_by(first_name: params[:name])
+        if user.present? && user.password == params[:password]
+          session[:login] = 1
+          session[:cuurent_user] = user.id
+          @resultSet = user.id
+        else
+          redirect_to(login_path, alert: 'Invalid User!') and return
+        end
+      end
+    end
   end
 
   # GET /products/1 or /products/1.json
@@ -66,4 +85,6 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:name, :brand, :manufacturer, :source, :price, :isSale, :image)
     end
+
+    
 end
