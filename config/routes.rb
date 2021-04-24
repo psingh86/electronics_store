@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :order_details
   get 'sign_up/index'=> 'sign_up/index', :as => 'sign_up'
   get 'login/index'=> 'login/index', :as => 'login'
   get 'new_item/index' => 'new_item/index', :as => 'new_item'
